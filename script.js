@@ -1,6 +1,3 @@
-console.log("Hello World");
-console.log("teste2");
-
 // Agendamento
 // Camel Case - Snake Case
 
@@ -10,17 +7,37 @@ var hrAgendamento = "10:30";
 var responsavel = "Dylan";
 var nomeCliente = "Gabriel";
 var valor = "100,00";
+
+var barbeiros = [
+    {
+        nome: "Dylan",
+        escala: ["Segunda","Quarta","Sexta"]
+    },
+    {
+        nome: "Gabriel",
+        escala:["Terça","Quinta","Sábado"]
+    },
+
+]
+
 // objeto
 
-function teste(){
+// Dylan - Segunda - Quarta e Sexta
+// Gabriel - Terça - Quinta e Sábado
 
- if (responsavel === "Erick"){
-    console.log(nomeCliente);
 
- } else{
-    console.log("Serviço: " + nomeServico + "\n data:" + dtAgendamento);
-    
- }
+function mostraEscala(){
+    let diaMarcado = "Sábado";
+    for (let i = 0; i < barbeiros.length; i++) {
+        const barbeiro = barbeiros[i];
+        
+        for (let x = 0; x < barbeiro.escala.length; x++) {
+            const escala = barbeiro.escala[x];
+            if(diaMarcado === escala){
+                console.log(barbeiro.nome);
+            } 
+        }
+    }
 }
 
-teste();
+mostraEscala();
